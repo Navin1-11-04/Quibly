@@ -12,6 +12,7 @@ const NotesContext = createContext();
 const initialState = {
   notes: [],
   selectedNoteId: null,
+  searchTerm: '',
 };
 
 function notesReducer(state, action) {
@@ -28,7 +29,7 @@ function notesReducer(state, action) {
       return {
         ...state,
         notes: [newNote, ...state.notes],
-        selectedNoteId: newNote.id,
+        selectedNoteId: null,
       };
 
     case 'UPDATE_NOTE':
@@ -56,7 +57,11 @@ function notesReducer(state, action) {
         ...state,
         selectedNoteId: action.payload,
       };
-
+    case 'SET_SEARCH_TERM':
+      return {
+        ...state,
+        searchTerm: action.payload
+      };
     default:
       return state;
   }
@@ -70,7 +75,6 @@ export function NotesProvider({ children }) {
 
   const [state, dispatch] = useReducer(notesReducer, persistedState);
 
-  // Keep localStorage in sync with reducer state
   useEffect(() => {
     setPersistedState(state);
   }, [state]);

@@ -20,7 +20,7 @@ export function updateNote(note,updates){
 }
 
 export function filterNotes(notes,searchTerm){
-    if(!searchTerm.trim()) return notes;
+    if(!searchTerm || !searchTerm.trim()) return notes;
     const lowerSearch = searchTerm.toLowerCase();
 
     return notes.filter((note) =>
