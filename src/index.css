@@ -1,1 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
+
+:root {
+  --bg-default: #f0f0f3;
+  --bg-main: #050505;
+  --bg-primary: #2f2f2f;
+  --bg-secondary: #1f1f1f;
+  --bg-light: #ebebeb;
+  --font-primary:'DM Sans';
+  --font-secondary:'Inter';
+}
+
+@theme inline{
+    --color-default:var(--bg-default);
+    --color-main:var(--bg-main);
+    --color-primary:var(--bg-primary);
+    --color-secondary:var(--bg-secondary);
+    --color-light:var(--bg-light);
+    --font-DM:var(--font-primary);
+    --font-Inter:var(--font-secondary);
+}
+.note_card{
+     box-shadow: 5px 5px 10px rgba(163, 177, 198, 0.6), -5px -5px 10px rgba(255, 255, 255, 0.5);
+}
+.note_list::-webkit-scrollbar {
+    width:10px;
+}
+
+.note_list::-webkit-scrollbar-track {
+    background:#eee;
+}
+
+.note_list::-webkit-scrollbar-thumb {
+    background-color:#e4e4e4;
+    border:2px solid #eee;
+    border-radius:10px;
+    background-color:#aaa;
+}
+

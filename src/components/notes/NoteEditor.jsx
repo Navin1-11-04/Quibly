@@ -52,7 +52,7 @@ const NoteEditor = () => {
 
 
     return (
-        <div style={{ marginTop: '1rem' }}>
+        <div className='max-w-[200px]'>
             <input
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}

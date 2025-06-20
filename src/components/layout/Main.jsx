@@ -1,14 +1,16 @@
 import React from 'react'
 import Header from './Header'
 import SideBar from './SideBar'
+import SearchBar from '../filters/SearchBar'
 
 const Main = ({children}) => {
   return (
-    <div className="w-full h-screen flex">
+    <div className="w-full h-screen flex overflow-hidden">
         <SideBar/>
         <div className="flex flex-col w-full">
             <Header/>
-            <main className='w-full h-full flex p-4 overflow-y-auto'>
+            <SearchBar/>
+            <main className='w-full h-full flex bg-[#f5f5f5] overflow-hidden'>
                 {children}
             </main>
         </div>
