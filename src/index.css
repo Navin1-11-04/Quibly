@@ -6,7 +6,7 @@
   --bg-main: #050505;
   --bg-primary: #2f2f2f;
   --bg-secondary: #1f1f1f;
-  --bg-light: #fbfbfb;
+  --bg-light: #fafafa;
   --font-primary:'DM Sans';
   --font-secondary:'Inter';
 }
@@ -21,7 +21,7 @@
     --font-Inter:var(--font-secondary);
 }
 .note_card{
-     box-shadow: 5px 5px 10px rgba(163, 177, 198, 0.6), -5px -5px 10px rgba(255, 255, 255, 0.5);
+     box-shadow: 3px 3px 6px rgba(163, 177, 198, 0.4), -3px -3px 6px rgba(255, 255, 255, 0.3);
 }
 /* 
 .note_list::-webkit-scrollbar {
