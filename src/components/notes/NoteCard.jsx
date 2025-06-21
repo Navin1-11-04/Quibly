@@ -1,10 +1,10 @@
 import { useNotes } from "../../context/NoteContext";
-import { FileText, RotateCw, X } from 'lucide-react'
+import { FileText, RotateCw, Star, StarOff, X } from 'lucide-react'
 const NoteCard = ({ note, onClick }) => {
 
   const { state, dispatch } = useNotes();
   const isSelected = state.selectedNoteId === note.id;
-  const theme = ["#66c5cc", "#f6cf71", "#f89c74", "#dcb0f2", "87c55f", "#9eb9f3", "#fe88b1", "#c9db74", "8be0a4", "#b497e7"]
+
   const handleDelete = (e) => {
     e.stopPropagation();
     if (window.confirm("Are you sure you want to delete this note?")) {
@@ -12,21 +12,34 @@ const NoteCard = ({ note, onClick }) => {
     }
   };
 
+  const handleFavourite = (e) =>{
+    e.stopPropagation();
+    dispatch({ type: 'FAVOURITE_NOTE', payload: note.id });
+  }
+
   return (
 
     <div
       onClick={() => onClick(note.id)}
-      className={`p-4 rounded-3xl border-2 max-w-[270px] min-w-[270px] cursor-pointer bg-white ${isSelected ? 'border-blue-500' : 'border-default'} note_card }`}>
+      className={`p-4 rounded-4xl border-[3px] max-w-[270px] min-w-[270px] bg-white cursor-pointer ${isSelected ? 'border-cyan-500' : 'border-default'} note_card }`}>
       <div className="w-full py-1 pb-3 flex items-start justify-between border-b border-default">
         <div>
-          <FileText size={18} />
+          <FileText size={18}/>
         </div>
+        <div className="flex items-center justify-between gap-5">
+        <button
+        onClick={handleFavourite}
+        className={`text-sm cursor-pointer ${note.favourite ? 'text-yellow-400':'text-[#bbb] '}`}
+        >
+          {note.favourite ?  <Star size={16} strokeWidth={2.5}/> : <StarOff size={16} strokeWidth={2.5}/>}
+        </button>
         <button
           onClick={handleDelete}
           className="text-[#bbb] text-sm hover:text-red-500 cursor-pointer"
         >
-          <X  size={20}/>
+          <X  size={20} strokeWidth={2.5} />
         </button>
+        </div>
       </div>
       <div className="w-full border-b border-default">
         <div className="w-full h-full flex items-baseline justify-between py-2">

@@ -23,8 +23,10 @@ function notesReducer(state, action) {
         title: action.payload.title || 'Untitled',
         content: action.payload.content || '',
         tags: [],
+        favourite:false,
         createdAt: new Date(),
         updatedAt: new Date(),
+        theme: action.payload.theme || '#ffffff',
       };
       return {
         ...state,
@@ -52,6 +54,15 @@ function notesReducer(state, action) {
             : state.selectedNoteId,
       };
 
+    case 'FAVOURITE_NOTE':
+      return{
+        ...state,
+        notes:state.notes.map((note)=>
+          note.id === action.payload ?
+          { ...note,favourite: !note.favourite}
+            :note
+        )
+      };
     case 'SELECT_NOTE':
       return {
         ...state,

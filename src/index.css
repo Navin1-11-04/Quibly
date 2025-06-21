@@ -6,7 +6,7 @@
   --bg-main: #050505;
   --bg-primary: #2f2f2f;
   --bg-secondary: #1f1f1f;
-  --bg-light: #ebebeb;
+  --bg-light: #fbfbfb;
   --font-primary:'DM Sans';
   --font-secondary:'Inter';
 }
@@ -24,17 +24,16 @@
      box-shadow: 5px 5px 10px rgba(163, 177, 198, 0.6), -5px -5px 10px rgba(255, 255, 255, 0.5);
 }
 .note_list::-webkit-scrollbar {
-    width:10px;
+    width:6px;
 }
-
 .note_list::-webkit-scrollbar-track {
-    background:#eee;
+    background:transparent;
 }
 
 .note_list::-webkit-scrollbar-thumb {
     background-color:#e4e4e4;
-    border:2px solid #eee;
     border-radius:10px;
+    border:2px 0 solid transparent;
     background-color:#aaa;
 }
 

@@ -17,7 +17,6 @@ const SearchBar = () => {
         width: '100%',
         padding: '0.5rem',
         fontSize: '1rem',
-        marginBottom: '1rem',
         border: '1px solid #ddd',
         borderRadius: '4px',
       }}
