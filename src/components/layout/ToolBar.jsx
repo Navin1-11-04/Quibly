@@ -10,21 +10,12 @@ const ToolBar = () => {
     };
 
     return (
-        <div className="w-full flex items-center justify-between border-b border-default">
+        <div className="w-full flex items-center justify-between border-b border-default font-DM px-3 py-1">
             <SearchBar />
             <button
                 onClick={handleNewNote}
-                style={{
-                    marginBottom: '1rem',
-                    padding: '0.3rem 0.8rem',
-                    backgroundColor: '#10b981',
-                    color: '#fff',
-                    border: 'none',
-                    borderRadius: '4px',
-                    cursor: 'pointer'
-                }}
-            >
-                + New Note
+                className='px-4 py-1.5 text-white bg-primary rounded-full flex items-center justify-center text-sm font-light w-[120px]'
+            >+ New Note
             </button>
         </div>
     )

@@ -19,7 +19,7 @@ const NotesList = () => {
 
   return (
     <div className="w-full h-full max-w-[585px] font-DM flex flex-col">
-    <div className='flex items-center-safe w-full font-Inter px-3 py-2 font-medium gap-3 text-base bg-white border-b border-default'>
+    <div className='flex items-center-safe w-full font-Inter px-3 py-2.5 font-medium gap-3 text-base bg-white border-b border-default'>
       <Files size={16}/><h2>My Notes</h2>
     </div>
     <div className="overflow-hidden">
