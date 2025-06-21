@@ -38,3 +38,6 @@
     background-color:#aaa;
 } */
 
+.scroll_hide::-webkit-scrollbar{
+    display:none;
+}

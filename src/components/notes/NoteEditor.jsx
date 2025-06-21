@@ -20,7 +20,6 @@ const NoteEditor = () => {
         dispatch({ type: 'SELECT_NOTE', payload: null });
     };
 
-
     useEffect(() => {
         if (selectedNote) {
             setTitle(selectedNote.title);
@@ -71,39 +70,39 @@ const NoteEditor = () => {
                     <FileCheck2 size={16} /><h2>Note</h2>
                 </div>
                 <div className='flex items-center justify-center gap-2'>
-                <button
+                    <button
                         onClick={handleNewNote}
                         className='text-sm flex items-center-safe justify-center py-1 px-3 bg-default rounded-sm gap-1 cursor-pointer border-2 border-default hover:border-blue-500 hover:bg-white'
-                >
-                    <Plus size={14} strokeWidth={2}/>
-                    New Note
-                </button>
-                {(selectedNote || isEditing) && (
-                    <button
-                        onClick={isEditing ? handleSave : handleEdit}
-                        className='text-sm flex items-center-safe justify-center py-1 px-3 bg-default rounded-sm gap-1 cursor-pointer
-                        border-2 border-default hover:border-blue-500 hover:bg-white'
                     >
-                        {isEditing ? (
-                            <>
-                                <Save size={14} strokeWidth={2} className="inline-block mr-1" />
-                                Save
-                            </>
-                        ) : (
-                            <>
-                                <SquarePen size={14} strokeWidth={2} className="inline-block mr-1" />
-                                Edit
-                            </>
-                        )}
+                        <Plus size={14} strokeWidth={2} />
+                        New Note
                     </button>
-                )}
+                    {(selectedNote || isEditing) && (
+                        <button
+                            onClick={isEditing ? handleSave : handleEdit}
+                            className='text-sm flex items-center-safe justify-center py-1 px-3 bg-default rounded-sm gap-1 cursor-pointer
+                        border-2 border-default hover:border-blue-500 hover:bg-white'
+                        >
+                            {isEditing ? (
+                                <>
+                                    <Save size={14} strokeWidth={2} className="inline-block mr-1" />
+                                    Save
+                                </>
+                            ) : (
+                                <>
+                                    <SquarePen size={14} strokeWidth={2} className="inline-block mr-1" />
+                                    Edit
+                                </>
+                            )}
+                        </button>
+                    )}
                 </div>
             </div>
 
             {!isEditing ? (
                 <div className="p-3 bg-light h-full w-full overflow-y-auto font-DM">
                     <div className='bg-white border-[3px] border-default rounded-xl h-auto w-full p-4 note_card'>
-                        <h2 className="text-2xl font-semibold pb-3 border-b border-default">{title || 'Untitled'}</h2>
+                        <h2 className="text-2xl font-medium pb-3 border-b border-default">{title || 'Untitled'}</h2>
                         <p className="whitespace-pre-wrap py-3">{content || 'No content...'}</p>
                     </div>
                 </div>
